@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habits · Daily Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="habits">
+  <div class="app-shell">
+    <div id="shell"></div>
+    <main class="main-content">
+      <header id="topbar" class="topbar"></header>
+      <div class="page-content">
+
+        <div class="habit-toolbar">
+          <select class="filter-select" id="habitCategoryFilter"></select>
+          <select class="filter-select" id="habitSort">
+            <option value="recent">Newest first</option>
+            <option value="streak">Longest streak</option>
+            <option value="name">Name (A–Z)</option>
+          </select>
+          <button class="btn btn-primary" id="addHabitBtn" style="margin-left:auto;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            Add habit
+          </button>
+        </div>
+
+        <div class="habit-list" id="habitsList"></div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Add / Edit Habit Modal -->
+  <div class="modal-overlay" id="habitModalOverlay">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 id="habitModalTitle">Add new habit</h3>
+        <button class="modal-close" id="habitModalClose">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form id="habitForm">
+        <div class="field">
+          <label for="habitName">Habit name</label>
+          <input type="text" id="habitName" placeholder="e.g. Drink 8 glasses of water" required>
+        </div>
+        <div class="field">
+          <label for="habitCategory">Category</label>
+          <select id="habitCategory"></select>
+        </div>
+        <div class="field">
+          <label for="habitTarget">Frequency</label>
+          <select id="habitTarget">
+            <option>Daily</option>
+            <option>Weekdays</option>
+            <option>Weekends</option>
+            <option>3x per week</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Color tag</label>
+          <div class="color-grid" id="habitColorGrid"></div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="habitCancelBtn" onclick="document.getElementById('habitModalOverlay').classList.remove('show')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save habit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

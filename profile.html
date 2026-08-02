@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile · Daily Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="profile">
+  <div class="app-shell">
+    <div id="shell"></div>
+    <main class="main-content">
+      <header id="topbar" class="topbar"></header>
+      <div class="page-content">
+
+        <div class="card fade-in mb-4">
+          <div class="profile-hero">
+            <div class="avatar" id="profileAvatar">?</div>
+            <div>
+              <h2 id="profileName">—</h2>
+              <p class="text-soft" id="profileEmail">—</p>
+              <p class="text-soft" id="profileJoined" style="font-size:.8rem; margin-top:2px;">—</p>
+            </div>
+          </div>
+          <div class="profile-stats">
+            <div><b id="profileTotalHabits">0</b><span>Habits</span></div>
+            <div><b id="profileLongestStreak">0</b><span>Longest streak</span></div>
+            <div><b id="profileTotalCompletions">0</b><span>Total check-ins</span></div>
+            <div><b id="profileGoalsDone">0</b><span>Goals completed</span></div>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card fade-in">
+            <div class="section-head"><h3>Edit profile</h3></div>
+            <form id="profileEditForm">
+              <div class="field">
+                <label for="editNameInput">Full name</label>
+                <input type="text" id="editNameInput" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </form>
+          </div>
+
+          <div class="card fade-in">
+            <div class="section-head"><h3>Change password</h3></div>
+            <div class="auth-error" id="passwordError"></div>
+            <form id="passwordChangeForm">
+              <div class="field">
+                <label for="curPassword">Current password</label>
+                <input type="password" id="curPassword" required>
+              </div>
+              <div class="field">
+                <label for="newPassword">New password</label>
+                <input type="password" id="newPassword" required>
+              </div>
+              <div class="field">
+                <label for="confirmPassword">Confirm new password</label>
+                <input type="password" id="confirmPassword" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Update password</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

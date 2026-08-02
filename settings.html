@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings · Daily Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="settings">
+  <div class="app-shell">
+    <div id="shell"></div>
+    <main class="main-content">
+      <header id="topbar" class="topbar"></header>
+      <div class="page-content">
+
+        <div class="card fade-in mb-4">
+          <div class="section-head"><h3>Appearance</h3></div>
+          <div class="setting-row">
+            <div class="setting-row-text">
+              <b>Dark mode</b>
+              <span>Switch between light and dark themes</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="darkModeSwitch">
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="card fade-in mb-4">
+          <div class="section-head"><h3>Notifications &amp; reminders</h3></div>
+          <div class="setting-row">
+            <div class="setting-row-text">
+              <b>Daily reminder</b>
+              <span>Get notified to complete your habits each day</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="notifSwitch">
+              <span class="slider-toggle"></span>
+            </label>
+          </div>
+          <div class="setting-row">
+            <div class="setting-row-text">
+              <b>Reminder time</b>
+              <span>Choose when your daily reminder should fire</span>
+            </div>
+            <input type="time" id="reminderTimeInput" style="padding:9px 12px; border-radius:10px; border:1.5px solid var(--border-c); background:var(--surface); color:var(--text);">
+          </div>
+        </div>
+
+        <div class="card fade-in mb-4">
+          <div class="section-head"><h3>Data management</h3></div>
+          <div class="setting-row">
+            <div class="setting-row-text">
+              <b>Export your data</b>
+              <span>Download all your habits and goals as a JSON file</span>
+            </div>
+            <button class="btn btn-outline" id="exportDataBtn">Export</button>
+          </div>
+          <div class="setting-row">
+            <div class="setting-row-text">
+              <b>Clear all data</b>
+              <span>Remove all habits and goals, keeping your account</span>
+            </div>
+            <button class="btn btn-outline" id="clearDataBtn">Clear data</button>
+          </div>
+        </div>
+
+        <div class="card fade-in">
+          <div class="section-head"><h3>Danger zone</h3></div>
+          <div class="setting-row">
+            <div class="setting-row-text">
+              <b>Delete account</b>
+              <span>Permanently delete your account and all associated data</span>
+            </div>
+            <button class="btn btn-danger" id="deleteAccountBtn">Delete account</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

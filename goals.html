@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goals · Daily Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="goals">
+  <div class="app-shell">
+    <div id="shell"></div>
+    <main class="main-content">
+      <header id="topbar" class="topbar"></header>
+      <div class="page-content">
+
+        <div class="habit-toolbar">
+          <div class="tabs" id="goalTabs" style="margin-bottom:0;">
+            <button class="tab-btn active" data-filter="active">Active</button>
+            <button class="tab-btn" data-filter="completed">Completed</button>
+            <button class="tab-btn" data-filter="all">All</button>
+          </div>
+          <button class="btn btn-primary" id="addGoalBtn" style="margin-left:auto;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            New goal
+          </button>
+        </div>
+
+        <div class="grid grid-3" id="goalsGrid"></div>
+
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="goalModalOverlay">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 id="goalModalTitle">Create new goal</h3>
+        <button class="modal-close" id="goalModalClose">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form id="goalForm">
+        <div class="field">
+          <label for="goalTitle">Goal title</label>
+          <input type="text" id="goalTitle" placeholder="e.g. Read 12 books this year" required>
+        </div>
+        <div class="field">
+          <label for="goalDesc">Description (optional)</label>
+          <textarea id="goalDesc" rows="3" placeholder="Add more detail about this goal..."></textarea>
+        </div>
+        <div class="field">
+          <label for="goalDate">Target date</label>
+          <input type="date" id="goalDate">
+        </div>
+        <div class="field">
+          <label for="goalProgress">Current progress (%)</label>
+          <input type="number" id="goalProgress" min="0" max="100" value="0">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" onclick="document.getElementById('goalModalOverlay').classList.remove('show')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save goal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

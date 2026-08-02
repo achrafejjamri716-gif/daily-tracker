@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statistics · Daily Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="statistics">
+  <div class="app-shell">
+    <div id="shell"></div>
+    <main class="main-content">
+      <header id="topbar" class="topbar"></header>
+      <div class="page-content">
+
+        <div class="tabs" id="statsTabs">
+          <button class="tab-btn active" data-range="week">This week</button>
+          <button class="tab-btn" data-range="month">This month</button>
+        </div>
+
+        <div class="grid grid-4 mb-4">
+          <div class="card stat-card">
+            <div class="stat-label">Total completions</div>
+            <div class="stat-value" id="statTotalCompletions">0</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-label">Average streak</div>
+            <div class="stat-value" id="statAvgStreak">0</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-label">Best streak ever</div>
+            <div class="stat-value" id="statBestStreak">0</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-label">7-day average</div>
+            <div class="stat-value" id="statWeekAvg">0%</div>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="grid-template-columns:1.4fr 1fr;">
+          <div class="card fade-in">
+            <div class="section-head"><h3>Completion trend</h3></div>
+            <canvas id="trendChart" style="width:100%; height:220px;"></canvas>
+          </div>
+          <div class="card fade-in">
+            <div class="section-head"><h3>By category</h3></div>
+            <div class="ring-wrap" style="margin-bottom:14px;">
+              <canvas id="categoryDonut" width="200" height="200" style="width:170px;height:170px;"></canvas>
+            </div>
+            <div id="categoryLegend"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-2 mt-4" style="grid-template-columns:1.4fr 1fr;">
+          <div class="card fade-in">
+            <div class="section-head"><h3>Daily completion — last 7 days</h3></div>
+            <canvas id="weekBarChart" style="width:100%; height:220px;"></canvas>
+          </div>
+          <div class="card fade-in">
+            <div class="section-head"><h3>Streak leaderboard</h3></div>
+            <div id="streakLeaderboard"></div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
